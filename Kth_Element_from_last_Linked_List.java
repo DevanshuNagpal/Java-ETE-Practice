@@ -45,3 +45,87 @@ second.previous() to move the second iterator back one step.
  */
     }
 }
+/*
+import java.util.Scanner;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    LinkedList() {
+        this.head = null;
+    }
+
+    void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+    }
+
+    int findKthFromEnd(int k) {
+        if (head == null || k <= 0) {
+            return -1; // Invalid input
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        // Move the fast pointer k steps ahead
+        for (int i = 0; i < k; i++) {
+            if (fast == null) {
+                return -1; // k is greater than the length of the list
+            }
+            fast = fast.next;
+        }
+
+        // Move both pointers until the fast pointer reaches the end
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow.data;
+    }
+}
+
+public class Kth_Element_from_last_Linked_List {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        LinkedList linkedList = new LinkedList();
+
+        // Input the linked list values
+        int data;
+        while ((data = scanner.nextInt()) != -1) {
+            linkedList.insert(data);
+        }
+
+        // Input the value of k
+        int k = scanner.nextInt();
+
+        // Find and print the kth element from the end
+        int result = linkedList.findKthFromEnd(k);
+        if (result == -1) {
+            System.out.println("Invalid input or k is greater than the length of the list.");
+        } else {
+            System.out.println("The kth element from the end is: " + result);
+        }
+    }
+}
+
+ */
