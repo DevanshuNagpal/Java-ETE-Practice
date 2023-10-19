@@ -19,7 +19,6 @@ public class Recursive_Text_Search {
             System.out.println(occurences);
         }
 
-
     }
 
     private static void search(String text, String target, int position, List<Integer> occurences) {
