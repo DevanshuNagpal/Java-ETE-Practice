@@ -6,38 +6,32 @@ import java.util.Set;
 public class GoodSubarrays {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int s = in.nextInt();
+        int n = in.nextInt(); // Read the total number of elements in the array.
+        int s = in.nextInt(); // Read the desired number of distinct integers in subarrays.
 
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = in.nextInt();
+            arr[i] = in.nextInt(); // Read the elements of the array.
         }
 
-        int count = countGoodSubarrays(arr, s);
-        System.out.println(count);
-
-
-
+        int count = countGoodSubarrays(arr, s); // Call the function to count good subarrays.
+        System.out.println(count); // Print the count of good subarrays.
     }
 
     private static int countGoodSubarrays(int[] arr, int s) {
         int n = arr.length;
         int count = 0;
-        for(int start = 0; start<n;start++){
-            HashSet<Integer> distinctIntegers = new HashSet<>();
+        for(int start = 0; start < n; start++){
+            HashSet<Integer> distinctIntegers = new HashSet<>(); // Use a HashSet to keep track of distinct integers.
             for (int end = start; end < n; end++) {
-                distinctIntegers.add(arr[end]);
+                distinctIntegers.add(arr[end]); // Add the current element to the HashSet.
                 if(distinctIntegers.size() == s){
-                    count++;
-                    printSubarray(arr,start,end);
+                    count++; // If the number of distinct integers reaches 's', increment the count.
+                    printSubarray(arr, start, end); // Print the subarray that satisfies the condition.
                 }
-
             }
         }
-
-
-        return count;
+        return count; // Return the total count of good subarrays.
     }
 
     private static void printSubarray(int[] arr, int start, int end) {
@@ -50,6 +44,7 @@ public class GoodSubarrays {
         }
         System.out.println("]");
     }
+}
 
 //    private static ArrayList<ArrayList<Integer>> findGoodSubarrays(int[] arr, int s) {
 //        int n = arr.length;
@@ -74,7 +69,7 @@ public class GoodSubarrays {
 //        }
 //        return goodSubarrays;
 //    }
-}
+
 
 
 /*
