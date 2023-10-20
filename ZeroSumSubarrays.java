@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class ZeroSumSubarrays {
-    public static int findAllSubarraysWithGivenSum(int arr[], int k) {
+    public static int findAllSubarraysWithGivenSum(int[] arr, int k) {
         // Get the size of the array.
         int n = arr.length;
         // Create a HashMap to store the count of prefix sums.
@@ -95,3 +95,28 @@ public class ZeroSumSubarrays {
         printZeroSumSubarrays(arr, k);
     }
 }
+/*
+Identifying Subarrays with Zero-Sum Total.
+You are a software developer working on an e-commerce platform. The platform has millions of product listings, each with a corresponding price. Your team has received feedback from users about an issue in the search results: sometimes, the search results contain duplicate products due to the way subarrays are generated.
+To resolve this issue, your team has decided to implement a subarray filter that removes duplicate products with the same total price. For this task, you need to write a Java program that finds all subarrays with a zero-sum total, which corresponds to duplicate products.
+Your task is to write a Java program to identify and print all the subarrays with a zero-sum total in a given integer array.
+
+
+Input Format
+input format for the given Java code is a space-separated list of integers
+Output Format
+If there are subarrays with a zero-sum, it will print each subarray on a new line. Each subarray will be represented by the elements separated by a space.
+If there are no subarrays with a zero-sum, it will print "-1" to indicate that no such subarrays exist in the input array.
+
+
+Sample Input 1:
+3 4 -7 3 1 3 1 -4 -2 -2
+Sample Output 1:
+3 4 -7
+3 4 -7 3 1 3 1 -4 -2 -2
+4 -7 3
+-7 3 1 3
+3 1 3 1 -4 -2 -2
+3 1 -4
+
+ */
